@@ -19,7 +19,7 @@ public class Input {
                 System.out.print(message);
                 return scanner.nextByte();
             } catch (InputMismatchException e) {
-                System.out.println("Error. Introduce tu edad. No puede ser de más de dos dígitos");
+                System.out.println(ErrorMessages.BYTE_ERROR);
                 scanner.nextLine();
             }
         }
@@ -31,7 +31,7 @@ public class Input {
                 System.out.print(message);
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Error. Introduce un número entero");
+                System.out.println(ErrorMessages.INTEGER_ERROR);
                 scanner.nextLine();
             }
         }
@@ -43,7 +43,7 @@ public class Input {
                 System.out.println(message);
                 return scanner.nextFloat();
             } catch (InputMismatchException e) {
-                System.out.println("Error. Introduce un número con decimales separados por un punto");
+                System.out.println(ErrorMessages.FLOAT_ERROR);
                 scanner.nextLine();
             }
         }
@@ -55,7 +55,7 @@ public class Input {
                 System.out.println(message);
                 return scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Error. Introduce un número con decimales separados por un punto");
+                System.out.println(ErrorMessages.DOUBLE_ERROR);
                 scanner.nextLine();
             }
         }
@@ -77,7 +77,7 @@ public class Input {
                     throw new CharExceptionMessage();
                 }
             } catch (CharExceptionMessage e) {
-                System.out.println(e.getMessage());
+                System.out.println(ErrorMessages.CHAR_ERROR);
             }
         }
     }
@@ -94,7 +94,7 @@ public class Input {
                     return input;
                 }
             } catch (StringExceptionMessage e) {
-                System.out.println(e.getMessage());
+                System.out.println(ErrorMessages.STRING_ERROR);
             }
         }
     }
@@ -113,7 +113,7 @@ public class Input {
                     throw new BooleanExceptionMessage();
                 }
             } catch (BooleanExceptionMessage e) {
-                System.out.println(e.getMessage());
+                System.out.println(ErrorMessages.BOOLEAN_ERROR);
             }
         }
     }

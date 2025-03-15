@@ -1,9 +1,11 @@
 package Level_2.model.exceptions;
 
+import Level_2.model.entities.ErrorMessages;
+
 public class BooleanExceptionMessage extends Exception {
 
-    public String getMessage() {
-        return "Error. Introduce la letra s o la n";
+    public BooleanExceptionMessage() {
+        super(ErrorMessages.BOOLEAN_ERROR);
     }
 
 }

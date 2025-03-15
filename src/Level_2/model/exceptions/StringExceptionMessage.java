@@ -1,9 +1,11 @@
 package Level_2.model.exceptions;
 
+import Level_2.model.entities.ErrorMessages;
+
 public class StringExceptionMessage extends Exception {
 
-    public String getMessage() {
-        return "Error. Introduce una frase o palabra";
+    public StringExceptionMessage() {
+        super(ErrorMessages.STRING_ERROR);
     }
 
 }
