@@ -2,6 +2,8 @@ package Level_2.model.entities;
 
 public class ErrorMessages {
 
+    // Añadir más mensajes para contemplar todos los distintos casos (que si la edad es negativa, etc)
+
     // Input Mismatch Errors
     public static final String BYTE_ERROR = "Error. Introduce tu edad";
     public static final String INTEGER_ERROR = "Error. Introduce un número entero";

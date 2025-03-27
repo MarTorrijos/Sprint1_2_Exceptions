@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 public class Sale {
 
+    // cambiar esto a list, bones practiques
     private ArrayList<Product> products;
+    // cambiar a double, el float redondea decimales
     private float totalPrice;
 
     public Sale() {
@@ -26,7 +28,6 @@ public class Sale {
         if (products.isEmpty()) {
             throw new EmptySaleException();
         } else {
-            totalPrice = 0;
             for (Product product : products) {
                 totalPrice += product.getPrice();
             }

@@ -33,6 +33,7 @@ public class Main {
         } catch (IndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
+
     }
 
 }
