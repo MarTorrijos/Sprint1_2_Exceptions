@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 
 ### Que ignore el ejercicio que dejé a medias
-/src/DNF_Level_3/
+**/src/DNF_Level_3/
 
 *.iml
 .idea/
