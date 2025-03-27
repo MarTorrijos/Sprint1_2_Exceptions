@@ -3,28 +3,27 @@ package Level_1.model.entities;
 import Level_1.model.exceptions.EmptySaleException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sale {
 
-    // cambiar esto a list, bones practiques
-    private ArrayList<Product> products;
-    // cambiar a double, el float redondea decimales
-    private float totalPrice;
+    private List<Product> products;
+    private double totalPrice;
 
     public Sale() {
         products = new ArrayList<>();
         totalPrice = 0;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public float getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public float calculateTotal() throws EmptySaleException {
+    public double calculateTotal() throws EmptySaleException {
         if (products.isEmpty()) {
             throw new EmptySaleException();
         } else {

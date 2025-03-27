@@ -1,8 +1,6 @@
 package Level_2.model.entities;
 
-import Level_2.model.exceptions.BooleanExceptionMessage;
-import Level_2.model.exceptions.CharExceptionMessage;
-import Level_2.model.exceptions.StringExceptionMessage;
+import Level_2.model.exceptions.CustomException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,7 +17,7 @@ public class Input {
                 System.out.print(message);
                 return scanner.nextByte();
             } catch (InputMismatchException e) {
-                System.out.println(ErrorMessages.BYTE_ERROR);
+                System.out.println("Error. Introduce tu edad");
                 scanner.nextLine();
             }
         }
@@ -31,7 +29,7 @@ public class Input {
                 System.out.print(message);
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(ErrorMessages.INTEGER_ERROR);
+                System.out.println("Error. Introduce un número enter");
                 scanner.nextLine();
             }
         }
@@ -43,7 +41,7 @@ public class Input {
                 System.out.println(message);
                 return scanner.nextFloat();
             } catch (InputMismatchException e) {
-                System.out.println(ErrorMessages.FLOAT_ERROR);
+                System.out.println("Error. Introduce un número con decimales separados por un punto");
                 scanner.nextLine();
             }
         }
@@ -55,13 +53,13 @@ public class Input {
                 System.out.println(message);
                 return scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println(ErrorMessages.DOUBLE_ERROR);
+                System.out.println("Error. Introduce un número con decimales separados por un punto");
                 scanner.nextLine();
             }
         }
     }
 
-    // Personalized exceptions
+    // Custom exception
 
     public static char readChar(String message){
         scanner.nextLine();
@@ -74,10 +72,10 @@ public class Input {
                 if (input.length() == 1) {
                     return input.charAt(0);
                 } else {
-                    throw new CharExceptionMessage();
+                    throw new CustomException("Error. Introduce un único caracter");
                 }
-            } catch (CharExceptionMessage e) {
-                System.out.println(ErrorMessages.CHAR_ERROR);
+            } catch (CustomException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -89,12 +87,12 @@ public class Input {
                 String input = scanner.nextLine();
 
                 if (input.isEmpty()) {
-                    throw new StringExceptionMessage();
+                    throw new CustomException("Error. Has contestado en blanco. Debes escribir una palabra o frase");
                 } else {
                     return input;
                 }
-            } catch (StringExceptionMessage e) {
-                System.out.println(ErrorMessages.STRING_ERROR);
+            } catch (CustomException e) {
+                System.out.println("Error. Introduce una frase o palabra");
             }
         }
     }
@@ -110,10 +108,10 @@ public class Input {
                 } else if (input.equalsIgnoreCase("n")) {
                     return false;
                 } else {
-                    throw new BooleanExceptionMessage();
+                    throw new CustomException("Error. Introduce la letra s o la n");
                 }
-            } catch (BooleanExceptionMessage e) {
-                System.out.println(ErrorMessages.BOOLEAN_ERROR);
+            } catch (CustomException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
